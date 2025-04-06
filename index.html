@@ -8,71 +8,77 @@
     <link href="src/output.css" rel="stylesheet">
     <link href="src/style.css" rel="stylesheet">
 </head>
-<body class="flex items-center justify-center m-auto">
+<body >
 
-    <!-- Animation Background -->
-    <div class="stars" id="stars"></div>
-    <!-- Animation Background -->
+     <!-- Space Animation Background -->
+     <div class="stars" id="stars"></div>
 
-    <!-- Calculator & History Panel Start-->
-    <div class="flex flex-col md:flex-row gap-4 w-full max-w-5xl py-4 px-10 relative z-10">
-        <!-- Calculator Panel Start-->
-        <div class="bg-white opacity-90 p-4 rounded-lg shadow-lg w-full max-w-md">
-            <input type="text" id="display" class="w-full p-3 mb-3 text-right text-xl sm:text-2xl bg-gray-200 rounded-lg focus:outline-none" readonly>
-            <div class="grid grid-cols-5 gap-2 sm:gap-3">
-                <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-gray-300" onclick="clearDisplay()">C</button>
-                <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-gray-300" onclick="appendToDisplay('(')">(</button>
-                <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-gray-300" onclick="appendToDisplay(')')">)</button>
-                <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-orange-500 text-white" onclick="appendToDisplay('/')">/</button>
-                <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-blue-500 text-white" onclick="differentiate()">d/dx</button>
+     <!-- Calculator and History Container Start -->
+     <div class="main-container translate-y-10 translate-x-10 flex flex-col md:flex-row gap-4 w-full max-w-7xl p-4 relative z-10 justify-center">
 
-                <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-[#D1D5DB]" onclick="appendToDisplay('7')">7</button>
-                <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-[#D1D5DB]" onclick="appendToDisplay('8')">8</button>
-                <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-[#D1D5DB]" onclick="appendToDisplay('9')">9</button>
-                <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-orange-500 text-white" onclick="appendToDisplay('*')">×</button>
-                <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-blue-500 text-white" onclick="integrate()">∫dx</button>
+         <!-- Calculator Part Start-->
+         <div class="bg-white opacity-95 p-4 rounded-lg shadow-lg w-full max-w-md">
+             <input type="text" id="display" class="w-full p-3 mb-3 text-right text-xl sm:text-2xl bg-gray-200 rounded-lg focus:outline-none" readonly>
+             <div class="grid grid-cols-5 gap-2 sm:gap-3">
+                 <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-gray-300" onclick="clearDisplay()">C</button>
+                 <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-gray-300" onclick="appendToDisplay('(')">(</button>
+                 <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-gray-300" onclick="appendToDisplay(')')">)</button>
+                 <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-orange-500 text-white" onclick="appendToDisplay('/')">/</button>
+                 <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-blue-500 text-white" onclick="differentiate()">d/dx</button>
+ 
+                 <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-[#D1D5DB]" onclick="appendToDisplay('7')">7</button>
+                 <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-[#D1D5DB]" onclick="appendToDisplay('8')">8</button>
+                 <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-[#D1D5DB]" onclick="appendToDisplay('9')">9</button>
+                 <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-orange-500 text-white" onclick="appendToDisplay('*')">×</button>
+                 <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-blue-500 text-white" onclick="integrate()">∫dx</button>
+ 
+                 <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-[#D1D5DB]" onclick="appendToDisplay('4')">4</button>
+                 <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-[#D1D5DB]" onclick="appendToDisplay('5')">5</button>
+                 <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-[#D1D5DB]" onclick="appendToDisplay('6')">6</button>
+                 <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-orange-500 text-white" onclick="appendToDisplay('-')">-</button>
+                 <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-blue-500 text-white" onclick="appendToDisplay('sqrt(')">√</button>
+ 
+                 <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-[#D1D5DB]" onclick="appendToDisplay('1')">1</button>
+                 <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-[#D1D5DB]" onclick="appendToDisplay('2')">2</button>
+                 <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-[#D1D5DB]" onclick="appendToDisplay('3')">3</button>
+                 <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-orange-500 text-white" onclick="appendToDisplay('+')">+</button>
+                 <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-blue-500 text-white" onclick="appendToDisplay('cbrt(')">∛</button>
+ 
+                 <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-[#D1D5DB]" onclick="appendToDisplay('0')">0</button>
+                 <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-gray-300" onclick="appendToDisplay('.')">.</button>
+                 <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-gray-300" onclick="appendToDisplay(',')">,</button>
+                 <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-green-500 text-white" onclick="calculate()">=</button>
+                 <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-red-500 text-white" onclick="deleteLast()">⌫</button>
+ 
+                 <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-blue-500 text-white" onclick="appendToDisplay('pow(')">xⁿ</button>
+                 <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-blue-500 text-white" onclick="appendToDisplay('sin(')">sin</button>
+                 <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-blue-500 text-white" onclick="appendToDisplay('cos(')">cos</button>
+                 <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-blue-500 text-white" onclick="appendToDisplay('tan(')">tan</button>
+                 <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-blue-500 text-white" onclick="rms()">RMS</button>
+ 
+                 <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-blue-500 text-white" onclick="appendToDisplay('log(')">log</button>
+                 <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-blue-500 text-white" onclick="appendToDisplay('ln(')">ln</button>
+                 <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-blue-500 text-white" onclick="appendToDisplay('exp(')">e^x</button>
+                 <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-blue-500 text-white" onclick="appendToDisplay('sqr(')">x²</button>
+                 <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-blue-500 text-white" onclick="appendToDisplay('cube(')">x³</button>
+             </div>
+         </div>
+         <!-- Calculator Part End-->
 
-                <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-[#D1D5DB]" onclick="appendToDisplay('4')">4</button>
-                <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-[#D1D5DB]" onclick="appendToDisplay('5')">5</button>
-                <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-[#D1D5DB]" onclick="appendToDisplay('6')">6</button>
-                <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-orange-500 text-white" onclick="appendToDisplay('-')">-</button>
-                <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-blue-500 text-white" onclick="appendToDisplay('Math.sqrt(')">√</button>
+ 
+         <!-- History Panel Strt-->
+         <div class="bg-white opacity-95 p-4 rounded-lg shadow-lg w-full max-w-md">
+             <div class="history-container">
+                 <h2 class="text-lg sm:text-xl font-semibold mb-3">Calculation History</h2>
+                 <ul id="history" class="space-y-2 max-h-80 sm:max-h-96 overflow-y-auto"></ul>
+                 <button class="clear-history-btn mt-3 p-2 sm:p-4 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-red-500 hover:bg-red-400 text-white w-full" onclick="clearHistory()">Clear History</button>
+             </div>
+         </div>
+         <!-- History Panel End-->
 
-                <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-[#D1D5DB]" onclick="appendToDisplay('1')">1</button>
-                <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-[#D1D5DB]" onclick="appendToDisplay('2')">2</button>
-                <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-[#D1D5DB]" onclick="appendToDisplay('3')">3</button>
-                <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-orange-500 text-white" onclick="appendToDisplay('+')">+</button>
-                <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-blue-500 text-white" onclick="appendToDisplay('Math.cbrt(')">∛</button>
+     </div>
+     <!-- Calculator and History Container End-->
 
-                <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-[#D1D5DB]" onclick="appendToDisplay('0')">0</button>
-                <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-gray-300" onclick="appendToDisplay('.')">.</button>
-                <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-gray-300" onclick="appendToDisplay(',')">,</button>
-                <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-green-500 text-white" onclick="calculate()">=</button>
-                <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-red-500 text-white" onclick="deleteLast()">⌫</button>
-
-                <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-blue-500 text-white" onclick="appendToDisplay('Math.pow(')">xⁿ</button>
-                <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-blue-500 text-white" onclick="appendToDisplay('Math.sin(')">sin</button>
-                <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-blue-500 text-white" onclick="appendToDisplay('Math.cos(')">cos</button>
-                <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-blue-500 text-white" onclick="appendToDisplay('Math.tan(')">tan</button>
-                <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-blue-500 text-white" onclick="rms()">RMS</button>
-
-                <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-blue-500 text-white" onclick="appendToDisplay('Math.log10(')">log</button>
-                <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-blue-500 text-white" onclick="appendToDisplay('Math.log(')">ln</button>
-                <button class="p-2 sm:p-2 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-blue-500 text-white" onclick="appendToDisplay('Math.exp(')">e^x</button>
-            </div>
-        </div>
-        <!-- Calculator Panel End-->
-
-        <!-- History Panel Start-->
-        <div class="bg-white opacity-90 p-4 rounded-lg shadow-lg w-full max-w-md">
-            <h2 class="text-lg sm:text-xl font-semibold mb-3 text-center">Calculation History</h2>
-            <ul id="history" class="space-y-2 max-h-80 sm:max-h-96 overflow-y-auto"></ul>
-            <button class="mt-3 p-2 sm:p-4 text-sm sm:text-lg font-semibold rounded-lg hover:bg-opacity-80 transition bg-red-500 text-white w-full" onclick="clearHistory()">Clear History</button>
-        </div>
-        <!-- History Panel End-->
-
-    </div>
-    <!-- Calculator & History Panel End-->
 
     <script src="src/script.js"></script>
 </body>

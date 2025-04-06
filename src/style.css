@@ -1,12 +1,12 @@
+
 body {
     background: radial-gradient(circle at center, #1a1a2e 0%, #0f0f1a 100%);
-    overflow: hidden;
     position: relative;
     min-height: 100vh;
 }
 
 .stars {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -25,4 +25,39 @@ body {
 @keyframes moveStar {
     0% { transform: translateY(0); opacity: 1; }
     100% { transform: translateY(100vh); opacity: 0.5; }
+}
+
+.history-container {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+}
+
+#history {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.clear-history-btn {
+    position: sticky;
+}
+
+.main-container {
+    min-height: auto;
+}
+
+@media (max-width: 767px) {
+    .main-container {
+        min-height: auto;
+    }
+}
+
+/* Style for clickable history items */
+.history-item {
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.history-item:hover {
+    background-color: #e5e7eb; 
 }
